@@ -6,13 +6,16 @@ const ReplySchema = new Schema(
         // set custom id to avoid confusion with parent comment_id
         replyId: {
             type: Schema.Types.ObjectId,
-            default: () => Types.ObjectId()
+            default: () => new Types.ObjectId()
         },
         replyBody: {
-            type: String
+            type: String,
+            required: true,
+            trim: true
         },
         writtenBy: {
-            type: String
+            type: String,
+            required: true
         },
         createdAt: {
             type: Date,
@@ -32,7 +35,8 @@ const CommentSchema = new Schema({
         type: String
     },
     commentBody: {
-        type: String
+        type: String,
+        required: 'You need to provide a comment body!',
     },
     createdAt: {
         type: Date,
