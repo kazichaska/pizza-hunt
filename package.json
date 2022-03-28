@@ -5,7 +5,8 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "12.11.1"
+    "node": ">=0.10.0",
+    "npm": ">=1.3.0"
   },
   "scripts": {
     "start": "node server.js"
